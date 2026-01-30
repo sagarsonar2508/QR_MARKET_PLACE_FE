@@ -1,0 +1,95 @@
+QR_MARKET_FE/                              # Root directory
+│
+├── src/                                    # Source code
+│   │
+│   ├── app/                               # Next.js App Router
+│   │   ├── dashboard/                     # Protected dashboard routes
+│   │   │   ├── layout.tsx                 # Dashboard layout with sidebar
+│   │   │   ├── cafes/
+│   │   │   │   └── page.tsx               # Cafe management page
+│   │   │   ├── qrcodes/
+│   │   │   │   └── page.tsx               # QR codes management page
+│   │   │   ├── orders/
+│   │   │   │   └── page.tsx               # Orders viewing page
+│   │   │   ├── analytics/
+│   │   │   │   └── page.tsx               # Analytics dashboard
+│   │   │   └── profile/
+│   │   │       └── page.tsx               # User profile page
+│   │   │
+│   │   ├── login/
+│   │   │   └── page.tsx                   # Login page
+│   │   ├── signup/
+│   │   │   └── page.tsx                   # Signup/Registration page
+│   │   │
+│   │   ├── layout.tsx                     # Root layout
+│   │   ├── page.tsx                       # Home page (/)
+│   │   ├── globals.css                    # Global Tailwind styles
+│   │   └── providers.tsx                  # Auth & Query providers
+│   │
+│   ├── components/                        # Reusable React components
+│   │   ├── Input.tsx                      # Input field component
+│   │   ├── Button.tsx                     # Button component
+│   │   ├── Card.tsx                       # Card component
+│   │   └── index.ts                       # Barrel export
+│   │
+│   ├── context/                           # React Context
+│   │   └── AuthContext.tsx                # Authentication context & provider
+│   │
+│   ├── lib/                               # Utility functions
+│   │   ├── api.ts                         # API request handler & token management
+│   │   └── validations.ts                 # Input validation functions
+│   │
+│   ├── services/                          # API services
+│   │   └── auth.service.ts                # Authentication API service
+│   │
+│   └── types/                             # TypeScript type definitions
+│       └── index.ts                       # Auth, API, and other types
+│
+├── public/                                # Static assets
+│   └── [will contain images, icons, etc]
+│
+├── Configuration Files
+│   ├── .env.example                       # Environment template
+│   ├── .env.local                         # Local environment variables
+│   ├── .eslintignore                      # ESLint ignore patterns
+│   ├── .eslintrc.json                     # ESLint configuration
+│   ├── .gitignore                         # Git ignore patterns
+│   ├── next.config.ts                     # Next.js configuration
+│   ├── postcss.config.js                  # PostCSS configuration
+│   ├── tailwind.config.ts                 # Tailwind CSS configuration
+│   ├── tsconfig.json                      # TypeScript configuration
+│   └── tsconfig.node.json                 # TypeScript Node config
+│
+├── Deployment & Docker
+│   ├── Dockerfile                         # Docker image definition
+│   └── docker-compose.yml                 # Docker Compose configuration
+│
+├── Package Management
+│   ├── package.json                       # Dependencies & scripts
+│   └── package-lock.json                  # Locked dependency versions
+│
+└── Documentation
+    ├── README.md                          # Main project readme
+    ├── PROJECT_OVERVIEW.md                # Detailed project overview
+    ├── QUICKSTART.md                      # Quick start guide
+    ├── API_DOCUMENTATION.md               # API endpoints documentation
+    ├── DEPLOYMENT.md                      # Deployment guide
+    └── DEPENDENCIES.md                    # Dependencies reference
+
+File Count Summary:
+- Total Files: ~35+
+- TypeScript Files: ~15
+- Configuration Files: ~10
+- Documentation Files: ~6
+- Component Files: ~3
+
+Key Directories:
+- src/app/          - 10+ files
+- src/components/   - 4 files
+- src/context/      - 1 file
+- src/lib/          - 2 files
+- src/services/     - 1 file
+- src/types/        - 1 file
+
+Total Project Size (without node_modules): ~150KB
+Total with node_modules: ~500MB

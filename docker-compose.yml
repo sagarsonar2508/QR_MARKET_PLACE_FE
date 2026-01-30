@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NEXT_PUBLIC_API_URL=http://backend:3002
+      - NODE_ENV=production
+    depends_on:
+      - backend
+    networks:
+      - qr-market-network
+
+  backend:
+    build: ../QR_MARKET
+    ports:
+      - "3002:3002"
+    environment:
+      - NODE_ENV=production
+      - PORT=3002
+    networks:
+      - qr-market-network
+
+networks:
+  qr-market-network:
+    driver: bridge
