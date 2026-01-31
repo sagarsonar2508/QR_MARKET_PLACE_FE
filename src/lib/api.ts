@@ -7,12 +7,14 @@ export const getAuthToken = (): string | null => {
 };
 
 export const setAuthToken = (token: string): void => {
-  Cookies.set("authToken", token, {
-    httpOnly: false, // Note: Next.js cannot set truly httpOnly cookies from client, ideally set from server
-    secure: process.env.NODE_ENV === "production",
-    sameSite: "strict",
-    maxAge: 3 * 60 * 60, // 3 hours
-  });
+  const cookieOptions: Cookies.CookieAttributes = {
+    sameSite: "Strict",
+    expires: 1 / 8, // 3 hours = 0.125 days
+  };
+  if (process.env.NODE_ENV === "production") {
+    cookieOptions.secure = true;
+  }
+  Cookies.set("authToken", token, cookieOptions);
 };
 
 export const removeAuthToken = (): void => {
