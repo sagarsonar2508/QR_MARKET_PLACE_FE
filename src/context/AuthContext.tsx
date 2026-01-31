@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useState, useEffect, ReactNode } from "react";
 import { AuthContextType } from "@/types";
-import { loginService, signupService, logoutService, getToken } from "@/services/auth.service";
+import { loginService, logoutService, getToken } from "@/services/auth.service";
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
@@ -35,19 +35,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  const signup = async (email: string, firstName: string, lastName: string) => {
-    setIsLoading(true);
-    try {
-      const response = await signupService(email, firstName, lastName);
-      setToken(response.token);
-      setUser({ email: response.email, role: response.role || null });
-    } catch (error) {
-      throw error;
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
   const logout = () => {
     logoutService();
     setUser(null);
@@ -59,7 +46,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     token,
     isLoading,
     login,
-    signup,
     logout,
   };
 
