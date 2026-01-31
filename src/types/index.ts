@@ -1,5 +1,5 @@
 export enum Platform {
-  WEB = "WEB",
+  WEB = "QRU",
   MOBILE = "MOBILE",
 }
 
